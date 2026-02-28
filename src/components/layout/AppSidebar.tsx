@@ -2,6 +2,7 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import {
   Sidebar,
   SidebarContent,
+  SidebarFooter,
   SidebarGroup,
   SidebarGroupContent,
   SidebarGroupLabel,
@@ -70,6 +71,19 @@ export default function AppSidebar() {
           })}
         </ScrollArea>
       </SidebarContent>
+      <SidebarFooter className="p-3">
+        <p className="text-[11px] text-muted-foreground/50 text-center">
+          made by{' '}
+          <a
+            href="https://github.com/nerdynikhil"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-muted-foreground transition-colors"
+          >
+            nerdynikhil
+          </a>
+        </p>
+      </SidebarFooter>
     </Sidebar>
   )
 }
