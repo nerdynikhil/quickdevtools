@@ -10,6 +10,29 @@ export const tools: ToolDefinition[] = [
     category: 'formatters',
     keywords: ['json', 'format', 'validate', 'prettify', 'minify', 'lint'],
     component: lazy(() => import('@/tools/formatters/json-formatter')),
+    seoContent: {
+      titleTag: 'Free Online JSON Formatter & Validator — Beautify & Minify JSON',
+      metaDescription: 'Format, validate, and minify JSON instantly in your browser. Free JSON formatter with syntax highlighting — 100% client-side, no data sent to servers.',
+      whatIs: 'JSON (JavaScript Object Notation) is a lightweight data-interchange format widely used in APIs, configuration files, and web applications. A JSON formatter takes raw or minified JSON and reformats it with proper indentation and line breaks so you can read, debug, and validate it quickly.',
+      howToUse: [
+        'Paste your raw or minified JSON into the input field on the left.',
+        'Click "Format (2 spaces)" or "4 spaces" to beautify, or "Minify" to compress.',
+        'The formatted output appears instantly on the right — copy it with one click.',
+      ],
+      useCases: [
+        'Debugging API responses by making deeply nested JSON readable',
+        'Validating JSON payloads before sending them to an API endpoint',
+        'Minifying JSON configuration files to reduce file size',
+        'Quick-checking JSON syntax when editing config files like package.json or tsconfig.json',
+      ],
+      faq: [
+        { question: 'Is my JSON data sent to a server?', answer: 'No. This JSON formatter runs 100% in your browser. Your data never leaves your machine — nothing is uploaded, stored, or logged.' },
+        { question: 'What JSON errors does the validator catch?', answer: 'The validator catches syntax errors like missing commas, unquoted keys, trailing commas, mismatched brackets, and invalid escape sequences. The exact error message and position are shown below the input.' },
+        { question: 'Can I format large JSON files?', answer: 'Yes. Since the tool runs in your browser, it can handle files up to several megabytes. For extremely large files (100MB+), performance depends on your device\'s available memory.' },
+        { question: 'What is the difference between formatting and minifying JSON?', answer: 'Formatting adds indentation and line breaks for readability. Minifying removes all whitespace to produce the smallest possible output, which is ideal for network transfer or storage.' },
+      ],
+      relatedSlugs: ['xml-formatter', 'yaml-formatter', 'json-yaml', 'json-path'],
+    },
   },
   {
     slug: 'xml-formatter',
@@ -18,6 +41,28 @@ export const tools: ToolDefinition[] = [
     category: 'formatters',
     keywords: ['xml', 'format', 'validate', 'prettify'],
     component: lazy(() => import('@/tools/formatters/xml-formatter')),
+    seoContent: {
+      titleTag: 'Free Online XML Formatter & Validator — Beautify XML Instantly',
+      metaDescription: 'Format and validate XML documents in your browser. Free XML beautifier with indentation control — 100% client-side, your data stays private.',
+      whatIs: 'XML (Extensible Markup Language) is a markup language used for storing and transporting structured data. An XML formatter indents and structures raw XML so you can read nested elements, spot errors, and validate well-formedness quickly.',
+      howToUse: [
+        'Paste your raw XML into the input area.',
+        'Click "Format" to beautify the XML with proper indentation.',
+        'Review the output and copy it to your clipboard.',
+      ],
+      useCases: [
+        'Formatting SOAP API responses for debugging',
+        'Cleaning up XML configuration files (Maven pom.xml, Android layouts)',
+        'Validating XML structure before parsing in applications',
+        'Making SVG source code readable for editing',
+      ],
+      faq: [
+        { question: 'Does this XML formatter validate against a schema (XSD)?', answer: 'This tool validates XML for well-formedness (correct nesting, matching tags, proper syntax). It does not validate against XSD or DTD schemas.' },
+        { question: 'Can I format large XML files?', answer: 'Yes. The formatter runs entirely in your browser and can handle files up to several megabytes depending on your device\'s available memory.' },
+        { question: 'Is my XML data secure?', answer: 'Absolutely. All processing happens locally in your browser. No data is transmitted to any server.' },
+      ],
+      relatedSlugs: ['json-formatter', 'html-formatter', 'json-yaml', 'svg-preview'],
+    },
   },
   {
     slug: 'html-formatter',
@@ -26,6 +71,28 @@ export const tools: ToolDefinition[] = [
     category: 'formatters',
     keywords: ['html', 'format', 'beautify', 'prettify'],
     component: lazy(() => import('@/tools/formatters/html-formatter')),
+    seoContent: {
+      titleTag: 'Free Online HTML Formatter & Beautifier — Pretty-Print HTML',
+      metaDescription: 'Beautify and format HTML markup instantly in your browser. Free HTML formatter with proper indentation — 100% client-side, your data stays private.',
+      whatIs: 'An HTML formatter takes messy or minified HTML markup and restructures it with consistent indentation, line breaks, and proper nesting. This makes it easier to read, edit, and debug web pages and email templates.',
+      howToUse: [
+        'Paste your HTML code into the input area.',
+        'Click "Format" to beautify with proper indentation.',
+        'Copy the formatted output or use "Minify" to compress it.',
+      ],
+      useCases: [
+        'Cleaning up HTML copied from web inspectors or CMS editors',
+        'Formatting email templates for readability before editing',
+        'Minifying HTML for production deployment to reduce page size',
+        'Debugging nested HTML structures and fixing unclosed tags',
+      ],
+      faq: [
+        { question: 'Does this formatter fix broken HTML?', answer: 'The formatter fixes indentation and whitespace. It does not auto-close tags or fix structural errors, but it makes them easier to spot visually.' },
+        { question: 'Can I format HTML with embedded CSS and JavaScript?', answer: 'Yes. The formatter handles inline styles, script blocks, and embedded CSS within the HTML document.' },
+        { question: 'Is my HTML data private?', answer: 'Yes. Everything runs in your browser — no data is sent to any server.' },
+      ],
+      relatedSlugs: ['css-formatter', 'js-ts-formatter', 'html-entity-encode-decode', 'svg-preview'],
+    },
   },
   {
     slug: 'css-formatter',
@@ -34,6 +101,28 @@ export const tools: ToolDefinition[] = [
     category: 'formatters',
     keywords: ['css', 'format', 'minify', 'beautify', 'stylesheet'],
     component: lazy(() => import('@/tools/formatters/css-formatter')),
+    seoContent: {
+      titleTag: 'Free Online CSS Formatter & Minifier — Beautify CSS Code',
+      metaDescription: 'Format or minify CSS stylesheets in your browser. Free CSS beautifier with indentation control — 100% client-side, no data leaves your machine.',
+      whatIs: 'A CSS formatter takes compressed or messy CSS code and restructures it with proper indentation, spacing, and line breaks. A CSS minifier does the opposite — it strips all unnecessary whitespace to produce the smallest possible file for production.',
+      howToUse: [
+        'Paste your CSS code into the input area.',
+        'Click "Format" to beautify or "Minify" to compress.',
+        'Copy the result to your clipboard.',
+      ],
+      useCases: [
+        'Making minified CSS from production sites readable for debugging',
+        'Minifying CSS files to reduce load times before deployment',
+        'Cleaning up auto-generated CSS from design tools like Figma',
+        'Standardizing CSS formatting across a team\'s codebase',
+      ],
+      faq: [
+        { question: 'Does this tool sort CSS properties?', answer: 'The formatter preserves your property order while fixing indentation and spacing. It does not reorder properties alphabetically.' },
+        { question: 'Can I format SCSS or LESS files?', answer: 'The formatter is designed for standard CSS. It may handle basic SCSS/LESS syntax, but nested rule sets and variables may not format perfectly.' },
+        { question: 'Is my CSS data secure?', answer: 'Yes. All processing happens in your browser — nothing is sent to any server.' },
+      ],
+      relatedSlugs: ['html-formatter', 'js-ts-formatter', 'px-rem-converter', 'color-converter'],
+    },
   },
   {
     slug: 'js-ts-formatter',
@@ -42,6 +131,28 @@ export const tools: ToolDefinition[] = [
     category: 'formatters',
     keywords: ['javascript', 'typescript', 'format', 'prettify', 'js', 'ts'],
     component: lazy(() => import('@/tools/formatters/js-ts-formatter')),
+    seoContent: {
+      titleTag: 'Free Online JavaScript & TypeScript Formatter — Beautify JS/TS Code',
+      metaDescription: 'Format JavaScript and TypeScript code instantly. Free JS/TS beautifier with proper indentation — 100% client-side, your code stays private.',
+      whatIs: 'A JavaScript/TypeScript formatter restructures your JS or TS code with consistent indentation, spacing, and line breaks. It makes code readable and easier to debug, similar to what Prettier does but right in your browser with zero setup.',
+      howToUse: [
+        'Paste your JavaScript or TypeScript code into the input area.',
+        'Click "Format" to beautify the code with proper indentation.',
+        'Copy the formatted result or use "Minify" to compress it.',
+      ],
+      useCases: [
+        'Formatting minified JavaScript from production bundles for debugging',
+        'Cleaning up code snippets before sharing in pull requests or documentation',
+        'Quick-formatting TypeScript interfaces and type definitions',
+        'Standardizing code style when Prettier isn\'t configured in a project',
+      ],
+      faq: [
+        { question: 'Does this support JSX and TSX?', answer: 'Yes, the formatter handles JSX and TSX syntax used in React components.' },
+        { question: 'Is this the same as Prettier?', answer: 'It provides similar formatting results for quick use in the browser. For project-level formatting, we recommend configuring Prettier in your build pipeline.' },
+        { question: 'Is my code data private?', answer: 'Yes. All formatting happens locally in your browser — no code is sent to any server.' },
+      ],
+      relatedSlugs: ['json-formatter', 'css-formatter', 'html-formatter', 'sql-formatter'],
+    },
   },
   {
     slug: 'sql-formatter',
@@ -50,6 +161,28 @@ export const tools: ToolDefinition[] = [
     category: 'formatters',
     keywords: ['sql', 'format', 'query', 'prettify', 'database'],
     component: lazy(() => import('@/tools/formatters/sql-formatter')),
+    seoContent: {
+      titleTag: 'Free Online SQL Formatter — Beautify & Pretty-Print SQL Queries',
+      metaDescription: 'Format SQL queries for readability instantly. Free SQL beautifier supporting MySQL, PostgreSQL, SQL Server — 100% client-side, your queries stay private.',
+      whatIs: 'A SQL formatter takes long, single-line SQL queries and reformats them with proper indentation, keyword capitalization, and line breaks. This makes complex queries with multiple JOINs, subqueries, and WHERE clauses much easier to read and debug.',
+      howToUse: [
+        'Paste your SQL query into the input area.',
+        'Select your SQL dialect (Standard, MySQL, PostgreSQL, etc.).',
+        'Click "Format" to beautify the query with proper indentation.',
+      ],
+      useCases: [
+        'Formatting complex JOIN queries from ORM-generated SQL for debugging',
+        'Making stored procedures and migrations readable for code review',
+        'Cleaning up SQL queries before adding them to documentation',
+        'Standardizing SQL style across database migration files',
+      ],
+      faq: [
+        { question: 'Which SQL dialects are supported?', answer: 'The formatter supports Standard SQL, MySQL, PostgreSQL, SQL Server (T-SQL), MariaDB, and several other dialects.' },
+        { question: 'Does this validate SQL syntax?', answer: 'The formatter focuses on indentation and styling. It does not validate query logic or check against a database schema.' },
+        { question: 'Are my database queries secure?', answer: 'Yes. All formatting runs in your browser. Your SQL queries are never sent to any server.' },
+      ],
+      relatedSlugs: ['json-formatter', 'yaml-formatter', 'text-diff', 'regex-tester'],
+    },
   },
   {
     slug: 'markdown-preview',
@@ -58,6 +191,28 @@ export const tools: ToolDefinition[] = [
     category: 'formatters',
     keywords: ['markdown', 'preview', 'md', 'render'],
     component: lazy(() => import('@/tools/formatters/markdown-preview')),
+    seoContent: {
+      titleTag: 'Free Online Markdown Preview — Live Markdown Renderer',
+      metaDescription: 'Preview Markdown with live rendering and syntax highlighting. Free Markdown viewer — 100% client-side, your documents stay private.',
+      whatIs: 'A Markdown previewer renders Markdown syntax into formatted HTML in real-time. Markdown is a lightweight markup language used for README files, documentation, blog posts, and notes. This tool lets you see how your Markdown will look when rendered, without needing to push to GitHub or run a local server.',
+      howToUse: [
+        'Type or paste your Markdown content into the editor.',
+        'The rendered preview updates in real-time on the right.',
+        'Use it to check formatting of headers, lists, code blocks, tables, and links.',
+      ],
+      useCases: [
+        'Previewing README.md files before pushing to GitHub',
+        'Drafting documentation with live formatting feedback',
+        'Checking Markdown table alignment and code block rendering',
+        'Writing blog posts in Markdown before publishing to a CMS',
+      ],
+      faq: [
+        { question: 'Does this support GitHub Flavored Markdown (GFM)?', answer: 'Yes. The previewer supports GFM features including tables, task lists, strikethrough, and fenced code blocks with syntax highlighting.' },
+        { question: 'Can I preview Markdown with images?', answer: 'Yes. If your Markdown contains image URLs, they will be rendered in the preview. Local file paths won\'t work since the tool runs in the browser.' },
+        { question: 'Is my Markdown content private?', answer: 'Yes. All rendering happens locally in your browser — nothing is sent to any server.' },
+      ],
+      relatedSlugs: ['html-formatter', 'text-diff', 'word-counter', 'lorem-ipsum-generator'],
+    },
   },
   {
     slug: 'yaml-formatter',
@@ -66,6 +221,28 @@ export const tools: ToolDefinition[] = [
     category: 'formatters',
     keywords: ['yaml', 'yml', 'format', 'validate'],
     component: lazy(() => import('@/tools/formatters/yaml-formatter')),
+    seoContent: {
+      titleTag: 'Free Online YAML Formatter & Validator — Beautify YAML',
+      metaDescription: 'Format and validate YAML documents in your browser. Free YAML formatter with proper indentation — 100% client-side, your data stays private.',
+      whatIs: 'YAML (YAML Ain\'t Markup Language) is a human-readable data serialization format commonly used for configuration files in tools like Docker Compose, Kubernetes, GitHub Actions, and Ansible. A YAML formatter fixes indentation and validates structure to prevent deployment errors caused by whitespace issues.',
+      howToUse: [
+        'Paste your YAML content into the input area.',
+        'Click "Format" to fix indentation and spacing.',
+        'Validation errors are shown if the YAML structure is invalid.',
+      ],
+      useCases: [
+        'Fixing indentation in Kubernetes manifests and Helm charts',
+        'Validating Docker Compose files before running docker-compose up',
+        'Cleaning up GitHub Actions workflow files',
+        'Converting messy YAML configs to properly indented format',
+      ],
+      faq: [
+        { question: 'Why is YAML indentation so important?', answer: 'Unlike JSON or XML, YAML uses indentation (spaces, not tabs) to define structure. A single extra or missing space can completely change the meaning of a YAML document or cause parse errors.' },
+        { question: 'Does this validate YAML syntax?', answer: 'Yes. The formatter checks for valid YAML structure and reports errors like incorrect indentation, duplicate keys, and invalid syntax.' },
+        { question: 'Is my YAML data private?', answer: 'Yes. All processing happens in your browser — no data is sent to any server.' },
+      ],
+      relatedSlugs: ['json-formatter', 'json-yaml', 'xml-formatter', 'json-path'],
+    },
   },
 
   // ── Encoders & Decoders ───────────────────────────────
@@ -76,6 +253,28 @@ export const tools: ToolDefinition[] = [
     category: 'encoders',
     keywords: ['base64', 'encode', 'decode', 'text'],
     component: lazy(() => import('@/tools/encoders/base64-text')),
+    seoContent: {
+      titleTag: 'Free Online Base64 Encoder & Decoder — Encode/Decode Base64 Text',
+      metaDescription: 'Encode or decode Base64 text instantly in your browser. Free Base64 converter — 100% client-side, your data never leaves your machine.',
+      whatIs: 'Base64 is a binary-to-text encoding scheme that represents binary data in an ASCII string format. It is widely used to embed images in HTML/CSS, transmit binary data in JSON APIs, encode email attachments (MIME), and store binary data in text-based formats like XML.',
+      howToUse: [
+        'Paste your plain text or Base64-encoded string into the input.',
+        'Click "Encode" to convert text to Base64, or "Decode" to convert Base64 back to text.',
+        'Copy the result with one click.',
+      ],
+      useCases: [
+        'Encoding API authentication credentials (Basic Auth headers)',
+        'Decoding Base64 strings from API responses or JWTs',
+        'Embedding small images as Base64 data URIs in CSS',
+        'Encoding binary data for storage in JSON or XML payloads',
+      ],
+      faq: [
+        { question: 'Is Base64 encryption?', answer: 'No. Base64 is an encoding scheme, not encryption. It does not provide any security — anyone can decode Base64 text. For security, use proper encryption like AES.' },
+        { question: 'Why does Base64 increase the size of data?', answer: 'Base64 encoding increases data size by approximately 33% because it represents 3 bytes of binary data as 4 ASCII characters. This trade-off allows binary data to be safely transmitted in text-based protocols.' },
+        { question: 'Is my data secure?', answer: 'Yes. All encoding and decoding happens locally in your browser — nothing is sent to any server.' },
+      ],
+      relatedSlugs: ['base64-file', 'url-encode-decode', 'jwt-decoder', 'hash-generator'],
+    },
   },
   {
     slug: 'base64-file',
@@ -84,6 +283,28 @@ export const tools: ToolDefinition[] = [
     category: 'encoders',
     keywords: ['base64', 'file', 'encode', 'decode', 'image'],
     component: lazy(() => import('@/tools/encoders/base64-file')),
+    seoContent: {
+      titleTag: 'Free Online Base64 File Encoder — Convert Files to Base64',
+      metaDescription: 'Convert files to Base64 and back in your browser. Encode images, PDFs, and documents — 100% client-side, your files never leave your machine.',
+      whatIs: 'The Base64 File Encoder converts any file (images, PDFs, documents) into a Base64-encoded text string, and vice versa. This is useful for embedding files directly in HTML, CSS, JSON, or database fields without needing a separate file server.',
+      howToUse: [
+        'Drag and drop a file or click to upload.',
+        'The tool instantly generates the Base64-encoded string.',
+        'Copy the Base64 string or download the decoded file.',
+      ],
+      useCases: [
+        'Embedding small images as data URIs in HTML or CSS',
+        'Converting files for storage in databases or API payloads',
+        'Decoding Base64-encoded file attachments from email APIs',
+        'Creating self-contained HTML documents with embedded resources',
+      ],
+      faq: [
+        { question: 'What file types can I encode?', answer: 'Any file type can be Base64-encoded: images (PNG, JPEG, GIF, SVG), PDFs, documents, audio files, and more.' },
+        { question: 'Is there a file size limit?', answer: 'Since the tool runs in your browser, it depends on your device\'s available memory. Files up to 10-20MB work well on most devices.' },
+        { question: 'Are my files uploaded to a server?', answer: 'No. All processing happens locally in your browser. Your files never leave your machine.' },
+      ],
+      relatedSlugs: ['base64-encode-decode', 'qr-code-generator', 'svg-preview', 'url-encode-decode'],
+    },
   },
   {
     slug: 'url-encode-decode',
@@ -92,6 +313,28 @@ export const tools: ToolDefinition[] = [
     category: 'encoders',
     keywords: ['url', 'encode', 'decode', 'percent', 'uri'],
     component: lazy(() => import('@/tools/encoders/url-encode-decode')),
+    seoContent: {
+      titleTag: 'Free Online URL Encoder & Decoder — Percent-Encode URLs',
+      metaDescription: 'Encode or decode URL components instantly. Free URL percent-encoding tool — 100% client-side, your data stays private.',
+      whatIs: 'URL encoding (percent-encoding) converts special characters in URLs into a format that can be safely transmitted over the internet. Characters like spaces, ampersands, and non-ASCII characters are replaced with percent-encoded equivalents (e.g., space becomes %20).',
+      howToUse: [
+        'Paste your URL or text string into the input.',
+        'Click "Encode" to percent-encode special characters, or "Decode" to convert them back.',
+        'Copy the result with one click.',
+      ],
+      useCases: [
+        'Encoding query parameters with special characters for API calls',
+        'Decoding percent-encoded URLs from server logs or analytics',
+        'Preparing strings for use in URL path segments',
+        'Debugging malformed URLs with double-encoded characters',
+      ],
+      faq: [
+        { question: 'What is the difference between encodeURI and encodeURIComponent?', answer: 'encodeURI encodes a full URL and preserves characters like :, /, ?, and #. encodeURIComponent encodes everything including those characters, making it suitable for encoding individual query parameter values.' },
+        { question: 'Why do I need to URL-encode data?', answer: 'URLs can only contain a limited set of ASCII characters. Special characters like spaces, &, =, and non-English characters must be percent-encoded to be valid in a URL.' },
+        { question: 'Is my data secure?', answer: 'Yes. All encoding and decoding runs in your browser — nothing is sent to any server.' },
+      ],
+      relatedSlugs: ['url-parser', 'html-entity-encode-decode', 'base64-encode-decode', 'string-escape'],
+    },
   },
   {
     slug: 'html-entity-encode-decode',
@@ -100,6 +343,28 @@ export const tools: ToolDefinition[] = [
     category: 'encoders',
     keywords: ['html', 'entity', 'encode', 'decode', 'escape'],
     component: lazy(() => import('@/tools/encoders/html-entity')),
+    seoContent: {
+      titleTag: 'Free Online HTML Entity Encoder & Decoder — Escape HTML Characters',
+      metaDescription: 'Encode or decode HTML entities instantly. Free HTML escape tool — convert special characters like <, >, & to safe entities. 100% client-side.',
+      whatIs: 'HTML entities are special character sequences that represent reserved characters in HTML. Characters like <, >, &, and " have special meaning in HTML and must be escaped to display correctly in web pages. This tool converts between raw characters and their HTML entity equivalents.',
+      howToUse: [
+        'Paste your text containing special characters into the input.',
+        'Click "Encode" to convert to HTML entities, or "Decode" to convert back to raw characters.',
+        'Copy the safe, encoded output for use in HTML documents.',
+      ],
+      useCases: [
+        'Escaping user input before displaying in HTML to prevent XSS attacks',
+        'Encoding special characters for use in HTML email templates',
+        'Decoding HTML entities found in scraped web content',
+        'Preparing code snippets for display in HTML documentation',
+      ],
+      faq: [
+        { question: 'What are the most common HTML entities?', answer: '&lt; for <, &gt; for >, &amp; for &, &quot; for ", and &apos; for \'. These five characters must be escaped in HTML content to prevent parsing issues.' },
+        { question: 'Does this prevent XSS attacks?', answer: 'Encoding HTML entities is one layer of XSS prevention. It prevents browsers from interpreting user input as HTML/JavaScript. Always combine it with server-side validation and Content Security Policy headers.' },
+        { question: 'Is my data private?', answer: 'Yes. All processing happens locally in your browser — nothing is transmitted to any server.' },
+      ],
+      relatedSlugs: ['url-encode-decode', 'html-formatter', 'string-escape', 'unicode-escape'],
+    },
   },
   {
     slug: 'jwt-decoder',
@@ -108,6 +373,28 @@ export const tools: ToolDefinition[] = [
     category: 'encoders',
     keywords: ['jwt', 'json', 'web', 'token', 'decode', 'auth'],
     component: lazy(() => import('@/tools/encoders/jwt-decoder')),
+    seoContent: {
+      titleTag: 'Free Online JWT Decoder — Decode & Inspect JSON Web Tokens',
+      metaDescription: 'Decode and inspect JWT tokens instantly. View header, payload, claims, and expiration — 100% client-side, your tokens never leave your browser.',
+      whatIs: 'A JSON Web Token (JWT) is a compact, URL-safe token format used for authentication and information exchange. JWTs consist of three Base64-encoded parts: header, payload, and signature. This decoder lets you inspect the contents of any JWT without needing to write code or use a library.',
+      howToUse: [
+        'Paste your JWT token into the input field.',
+        'The header and payload are instantly decoded and displayed.',
+        'Review claims like expiration (exp), issuer (iss), and custom claims.',
+      ],
+      useCases: [
+        'Debugging authentication issues by inspecting token claims',
+        'Checking JWT expiration times during API development',
+        'Verifying the correct issuer, audience, and scope in OAuth tokens',
+        'Inspecting ID tokens from providers like Auth0, Firebase, or Cognito',
+      ],
+      faq: [
+        { question: 'Does this verify JWT signatures?', answer: 'This tool decodes and displays the JWT contents. Signature verification requires the signing key, which should be done server-side for security.' },
+        { question: 'Is it safe to paste JWTs into online tools?', answer: 'With QuickDevTools, yes — everything runs in your browser. Your tokens are never sent to any server. Be cautious with other online JWT tools that may transmit your tokens.' },
+        { question: 'What JWT claims are displayed?', answer: 'All standard claims are displayed: iss (issuer), sub (subject), aud (audience), exp (expiration), nbf (not before), iat (issued at), plus any custom claims in the payload.' },
+      ],
+      relatedSlugs: ['base64-encode-decode', 'json-formatter', 'hash-generator', 'hmac-generator'],
+    },
   },
   {
     slug: 'unicode-escape',
@@ -116,6 +403,28 @@ export const tools: ToolDefinition[] = [
     category: 'encoders',
     keywords: ['unicode', 'escape', 'unescape', 'utf', 'character'],
     component: lazy(() => import('@/tools/encoders/unicode-escape')),
+    seoContent: {
+      titleTag: 'Free Online Unicode Escape/Unescape — Convert Unicode Characters',
+      metaDescription: 'Escape or unescape Unicode characters (\\uXXXX) instantly. Free Unicode converter — 100% client-side, your data stays private.',
+      whatIs: 'Unicode escaping converts characters into their \\uXXXX escape sequences (or vice versa). This is commonly needed when working with JSON strings, JavaScript source code, or any format that requires ASCII-safe representation of international characters, emoji, or special symbols.',
+      howToUse: [
+        'Paste text with Unicode characters or escape sequences into the input.',
+        'Click "Escape" to convert characters to \\uXXXX format, or "Unescape" to convert back.',
+        'Copy the result for use in your code or data files.',
+      ],
+      useCases: [
+        'Converting emoji and international characters to escape sequences for JSON',
+        'Decoding \\uXXXX sequences found in API responses or log files',
+        'Preparing strings with special characters for use in JavaScript source code',
+        'Debugging character encoding issues in internationalized applications',
+      ],
+      faq: [
+        { question: 'What is a Unicode escape sequence?', answer: 'A Unicode escape sequence is a way to represent any character using ASCII text. The format \\uXXXX uses four hexadecimal digits to specify the Unicode code point. For example, \\u0041 represents the letter "A".' },
+        { question: 'Does this support surrogate pairs and emoji?', answer: 'Yes. Characters outside the Basic Multilingual Plane (like emoji) are represented using surrogate pairs (two \\uXXXX sequences).' },
+        { question: 'Is my data private?', answer: 'Yes. All processing happens locally in your browser — nothing is sent to any server.' },
+      ],
+      relatedSlugs: ['string-escape', 'html-entity-encode-decode', 'url-encode-decode', 'backslash-escape'],
+    },
   },
 
   // ── String / Text Tools ───────────────────────────────
@@ -126,6 +435,28 @@ export const tools: ToolDefinition[] = [
     category: 'string-text',
     keywords: ['string', 'escape', 'unescape', 'quote'],
     component: lazy(() => import('@/tools/string-text/string-escape')),
+    seoContent: {
+      titleTag: 'Free Online String Escape/Unescape — Escape Strings for Any Language',
+      metaDescription: 'Escape or unescape strings for JSON, JavaScript, Python, Java, and more. Free string escaper — 100% client-side, your data stays private.',
+      whatIs: 'String escaping converts special characters (quotes, backslashes, newlines) into their escaped equivalents so they can be safely embedded in source code or data formats. Different languages use different escape conventions — this tool handles them all.',
+      howToUse: [
+        'Paste your string into the input area.',
+        'Select the target language/format (JSON, JavaScript, Python, Java, etc.).',
+        'Click "Escape" or "Unescape" to convert.',
+      ],
+      useCases: [
+        'Escaping strings containing quotes for embedding in JSON',
+        'Preparing multi-line text for use in JavaScript template literals',
+        'Unescaping strings from API responses or database dumps',
+        'Converting between different language escape formats',
+      ],
+      faq: [
+        { question: 'Which languages are supported?', answer: 'The tool supports escaping for JSON, JavaScript, Python, Java, C#, PHP, Go, and other common formats.' },
+        { question: 'Does this handle newlines and tabs?', answer: 'Yes. Newline (\\n), tab (\\t), carriage return (\\r), and other control characters are properly escaped and unescaped.' },
+        { question: 'Is my data private?', answer: 'Yes. All processing happens locally in your browser.' },
+      ],
+      relatedSlugs: ['backslash-escape', 'unicode-escape', 'html-entity-encode-decode', 'url-encode-decode'],
+    },
   },
   {
     slug: 'text-case-converter',
@@ -134,6 +465,28 @@ export const tools: ToolDefinition[] = [
     category: 'string-text',
     keywords: ['case', 'convert', 'camel', 'snake', 'pascal', 'upper', 'lower', 'kebab'],
     component: lazy(() => import('@/tools/string-text/text-case-converter')),
+    seoContent: {
+      titleTag: 'Free Online Text Case Converter — camelCase, snake_case, UPPER & More',
+      metaDescription: 'Convert text between camelCase, snake_case, PascalCase, UPPER_CASE, kebab-case, and more. Free case converter — 100% client-side.',
+      whatIs: 'A text case converter transforms strings between different naming conventions used in programming. Whether you need camelCase for JavaScript variables, snake_case for Python, PascalCase for class names, or UPPER_CASE for constants, this tool handles all common conventions.',
+      howToUse: [
+        'Paste your text or variable name into the input.',
+        'Select the target case format from the options.',
+        'The converted result appears instantly — copy it with one click.',
+      ],
+      useCases: [
+        'Converting variable names between languages (JS camelCase ↔ Python snake_case)',
+        'Generating CSS class names in kebab-case from component names',
+        'Converting database column names (snake_case) to code variable names (camelCase)',
+        'Transforming text to UPPER CASE or Title Case for display purposes',
+      ],
+      faq: [
+        { question: 'What case formats are supported?', answer: 'Supported formats include camelCase, PascalCase, snake_case, UPPER_SNAKE_CASE, kebab-case, UPPER-KEBAB-CASE, Title Case, Sentence case, lowercase, and UPPERCASE.' },
+        { question: 'Can I convert multiple words at once?', answer: 'Yes. The converter intelligently detects word boundaries from spaces, underscores, hyphens, and camelCase transitions, then applies the target format.' },
+        { question: 'Is my data private?', answer: 'Yes. All conversions happen in your browser — nothing is sent to any server.' },
+      ],
+      relatedSlugs: ['word-counter', 'reverse-string', 'sort-lines', 'regex-tester'],
+    },
   },
   {
     slug: 'text-diff',
@@ -142,6 +495,28 @@ export const tools: ToolDefinition[] = [
     category: 'string-text',
     keywords: ['diff', 'compare', 'difference', 'merge'],
     component: lazy(() => import('@/tools/string-text/text-diff')),
+    seoContent: {
+      titleTag: 'Free Online Text Diff Tool — Compare & Highlight Text Differences',
+      metaDescription: 'Compare two texts side by side and highlight differences. Free text diff tool — 100% client-side, your data stays private.',
+      whatIs: 'A text diff tool compares two pieces of text and highlights the exact differences between them — additions, deletions, and modifications. It works like the diff view in Git or code review tools, but directly in your browser with no setup.',
+      howToUse: [
+        'Paste the original text in the left panel and the modified text in the right panel.',
+        'Differences are highlighted automatically — green for additions, red for deletions.',
+        'Review changes line-by-line or character-by-character.',
+      ],
+      useCases: [
+        'Comparing two versions of a configuration file to find changes',
+        'Reviewing text changes before merging or publishing',
+        'Spotting differences in API responses between environments',
+        'Comparing code snippets without setting up a Git repository',
+      ],
+      faq: [
+        { question: 'Does this support character-level diff?', answer: 'Yes. The tool highlights differences at both the line level and character level, making it easy to spot even small changes within a line.' },
+        { question: 'Can I compare code files?', answer: 'Yes. The diff tool works with any text including source code, configuration files, JSON, SQL queries, and plain text.' },
+        { question: 'Is my data private?', answer: 'Yes. All comparison happens locally in your browser — nothing is sent to any server.' },
+      ],
+      relatedSlugs: ['json-formatter', 'word-counter', 'sort-lines', 'remove-duplicate-lines'],
+    },
   },
   {
     slug: 'lorem-ipsum-generator',
@@ -150,6 +525,28 @@ export const tools: ToolDefinition[] = [
     category: 'string-text',
     keywords: ['lorem', 'ipsum', 'placeholder', 'dummy', 'text'],
     component: lazy(() => import('@/tools/string-text/lorem-ipsum')),
+    seoContent: {
+      titleTag: 'Free Online Lorem Ipsum Generator — Placeholder Text for Design',
+      metaDescription: 'Generate Lorem Ipsum placeholder text instantly. Choose paragraphs, sentences, or words. Free dummy text generator — 100% client-side.',
+      whatIs: 'Lorem Ipsum is placeholder text used in design, publishing, and web development to fill layouts with realistic-looking content before the actual copy is written. It has been the industry standard dummy text since the 1500s, based on a work by Cicero.',
+      howToUse: [
+        'Select the type of content: paragraphs, sentences, or words.',
+        'Choose the number of units to generate.',
+        'Click "Generate" and copy the placeholder text.',
+      ],
+      useCases: [
+        'Filling wireframes and mockups with realistic text length',
+        'Testing responsive layouts with varying amounts of content',
+        'Prototyping web pages and email templates',
+        'Generating sample content for typography and font testing',
+      ],
+      faq: [
+        { question: 'What is Lorem Ipsum?', answer: 'Lorem Ipsum is scrambled Latin text derived from Cicero\'s "De Finibus Bonorum et Malorum" (45 BC). It has been used as placeholder text in typesetting since the 1500s because it has a natural distribution of letters that resembles readable English.' },
+        { question: 'Can I generate text in different languages?', answer: 'This tool generates classic Latin Lorem Ipsum text. For localized placeholder text, consider using faker.js-based generators.' },
+        { question: 'Is my data private?', answer: 'Yes. Text generation happens entirely in your browser.' },
+      ],
+      relatedSlugs: ['word-counter', 'mock-data-generator', 'random-generator', 'markdown-preview'],
+    },
   },
   {
     slug: 'word-counter',
@@ -158,6 +555,28 @@ export const tools: ToolDefinition[] = [
     category: 'string-text',
     keywords: ['word', 'character', 'count', 'length', 'sentence'],
     component: lazy(() => import('@/tools/string-text/word-counter')),
+    seoContent: {
+      titleTag: 'Free Online Word Counter — Count Words, Characters & Sentences',
+      metaDescription: 'Count words, characters, sentences, and paragraphs instantly. Free word counter tool — 100% client-side, your text stays private.',
+      whatIs: 'A word counter analyzes text and provides statistics including word count, character count (with and without spaces), sentence count, paragraph count, and estimated reading time. It is essential for writing content with length requirements.',
+      howToUse: [
+        'Paste or type your text into the input area.',
+        'Counts update in real-time as you type.',
+        'View word count, character count, sentence count, paragraph count, and reading time.',
+      ],
+      useCases: [
+        'Checking word count for blog posts, essays, and articles',
+        'Ensuring meta descriptions stay within the 160-character limit',
+        'Counting characters for social media post limits (Twitter/X, LinkedIn)',
+        'Estimating reading time for content planning',
+      ],
+      faq: [
+        { question: 'How is reading time calculated?', answer: 'Reading time is estimated at approximately 200-250 words per minute, which is the average adult reading speed.' },
+        { question: 'Does this count spaces?', answer: 'The tool shows both character counts: with spaces and without spaces, so you can use whichever metric you need.' },
+        { question: 'Is my text private?', answer: 'Yes. All counting happens in your browser — nothing is sent to any server.' },
+      ],
+      relatedSlugs: ['lorem-ipsum-generator', 'text-diff', 'remove-duplicate-lines', 'sort-lines'],
+    },
   },
   {
     slug: 'remove-duplicate-lines',
@@ -166,6 +585,28 @@ export const tools: ToolDefinition[] = [
     category: 'string-text',
     keywords: ['duplicate', 'remove', 'unique', 'lines', 'deduplicate'],
     component: lazy(() => import('@/tools/string-text/remove-duplicate-lines')),
+    seoContent: {
+      titleTag: 'Free Online Duplicate Line Remover — Deduplicate Text Lines',
+      metaDescription: 'Remove duplicate lines from text instantly. Free deduplication tool — 100% client-side, your data stays private.',
+      whatIs: 'The duplicate line remover scans your text and removes any lines that appear more than once, keeping only unique lines. It is useful for cleaning up data exports, log files, and lists that contain repeated entries.',
+      howToUse: [
+        'Paste your text with duplicate lines into the input.',
+        'Click "Remove Duplicates" to get only unique lines.',
+        'Copy the cleaned output — duplicates are removed while preserving order.',
+      ],
+      useCases: [
+        'Cleaning up CSV exports with repeated rows',
+        'Deduplicating email lists or user ID lists',
+        'Removing repeated log entries for analysis',
+        'Cleaning up copy-pasted data from multiple sources',
+      ],
+      faq: [
+        { question: 'Does this preserve the original order?', answer: 'Yes. The tool keeps the first occurrence of each line and removes subsequent duplicates while maintaining the original order.' },
+        { question: 'Is the comparison case-sensitive?', answer: 'By default, yes — "Hello" and "hello" are treated as different lines. Some implementations offer a case-insensitive option.' },
+        { question: 'Is my data private?', answer: 'Yes. All processing happens in your browser — nothing is sent to any server.' },
+      ],
+      relatedSlugs: ['sort-lines', 'word-counter', 'text-diff', 'regex-tester'],
+    },
   },
   {
     slug: 'sort-lines',
@@ -174,6 +615,28 @@ export const tools: ToolDefinition[] = [
     category: 'string-text',
     keywords: ['sort', 'lines', 'alphabetical', 'order', 'reverse'],
     component: lazy(() => import('@/tools/string-text/sort-lines')),
+    seoContent: {
+      titleTag: 'Free Online Line Sorter — Sort Text Lines Alphabetically or Numerically',
+      metaDescription: 'Sort text lines alphabetically, numerically, by length, or in reverse. Free line sorting tool — 100% client-side, your data stays private.',
+      whatIs: 'The line sorter organizes lines of text in alphabetical, numerical, or length-based order. It can also reverse the sort and remove empty lines. This is useful for ordering lists, cleaning up data, and organizing configuration entries.',
+      howToUse: [
+        'Paste your text with multiple lines into the input.',
+        'Select the sort method: alphabetical, numerical, or by length.',
+        'Click "Sort" and copy the ordered result.',
+      ],
+      useCases: [
+        'Alphabetizing lists of names, items, or imports',
+        'Sorting CSS properties or package.json dependencies alphabetically',
+        'Ordering numerical data like IP addresses or port numbers',
+        'Reversing the order of lines in a file',
+      ],
+      faq: [
+        { question: 'Can I sort in reverse order?', answer: 'Yes. The tool supports both ascending and descending sort for all sort methods.' },
+        { question: 'Does this handle numerical sorting correctly?', answer: 'Yes. Numerical sort treats lines as numbers (so 2 comes before 10), unlike alphabetical sort where "10" comes before "2".' },
+        { question: 'Is my data private?', answer: 'Yes. All sorting happens in your browser — nothing is sent to any server.' },
+      ],
+      relatedSlugs: ['remove-duplicate-lines', 'reverse-string', 'word-counter', 'text-diff'],
+    },
   },
   {
     slug: 'reverse-string',
@@ -182,6 +645,28 @@ export const tools: ToolDefinition[] = [
     category: 'string-text',
     keywords: ['reverse', 'string', 'lines', 'flip', 'backwards'],
     component: lazy(() => import('@/tools/string-text/reverse-string')),
+    seoContent: {
+      titleTag: 'Free Online String Reverser — Reverse Text or Individual Lines',
+      metaDescription: 'Reverse text strings or reverse the order of lines instantly. Free string reverser — 100% client-side, your data stays private.',
+      whatIs: 'A string reverser takes text and reverses it character by character (e.g., "hello" → "olleh") or reverses the order of lines in a multi-line text. It handles Unicode characters and emoji correctly.',
+      howToUse: [
+        'Paste your text into the input area.',
+        'Choose to reverse the entire string or reverse the order of lines.',
+        'Copy the reversed output.',
+      ],
+      useCases: [
+        'Creating palindrome checks and text puzzles',
+        'Reversing log files to show newest entries first',
+        'Debugging Unicode text direction issues',
+        'Generating reversed text for creative or encoding purposes',
+      ],
+      faq: [
+        { question: 'Does this handle emoji and Unicode correctly?', answer: 'Yes. The tool is Unicode-aware and correctly handles multi-byte characters, emoji, and combining characters.' },
+        { question: 'Can I reverse the order of lines without reversing each line\'s text?', answer: 'Yes. The "Reverse Lines" option reverses the line order while keeping each line\'s text intact.' },
+        { question: 'Is my data private?', answer: 'Yes. All processing happens in your browser — nothing is sent to any server.' },
+      ],
+      relatedSlugs: ['sort-lines', 'text-case-converter', 'word-counter', 'remove-duplicate-lines'],
+    },
   },
   {
     slug: 'regex-tester',
@@ -190,6 +675,28 @@ export const tools: ToolDefinition[] = [
     category: 'string-text',
     keywords: ['regex', 'regular', 'expression', 'test', 'match', 'pattern'],
     component: lazy(() => import('@/tools/string-text/regex-tester')),
+    seoContent: {
+      titleTag: 'Free Online Regex Tester — Test Regular Expressions with Live Highlighting',
+      metaDescription: 'Test regular expressions with live match highlighting. Free regex tester supporting JavaScript regex — 100% client-side, your data stays private.',
+      whatIs: 'A regex tester lets you write regular expressions and instantly see matches highlighted in your test string. It shows match groups, captures, and match indices in real-time, making it the fastest way to develop and debug regex patterns without switching between your editor and documentation.',
+      howToUse: [
+        'Enter your regular expression pattern in the regex field.',
+        'Paste the test string you want to match against.',
+        'Matches are highlighted in real-time — groups and captures are displayed below.',
+      ],
+      useCases: [
+        'Developing patterns for email, URL, or phone number validation',
+        'Testing complex regex before using them in code or text editors',
+        'Debugging regex that aren\'t matching as expected',
+        'Learning regex syntax with immediate visual feedback',
+      ],
+      faq: [
+        { question: 'Which regex flavor is used?', answer: 'This tool uses JavaScript\'s built-in RegExp engine, which supports most common regex features including groups, lookaheads, lookbehinds, and named captures.' },
+        { question: 'Does this support flags like global and case-insensitive?', answer: 'Yes. You can toggle flags like g (global), i (case-insensitive), m (multiline), s (dotAll), and u (unicode).' },
+        { question: 'Is my data private?', answer: 'Yes. All regex testing happens locally in your browser — nothing is sent to any server.' },
+      ],
+      relatedSlugs: ['text-diff', 'string-escape', 'word-counter', 'text-case-converter'],
+    },
   },
   {
     slug: 'backslash-escape',
@@ -198,6 +705,28 @@ export const tools: ToolDefinition[] = [
     category: 'string-text',
     keywords: ['backslash', 'escape', 'unescape', 'newline', 'tab'],
     component: lazy(() => import('@/tools/string-text/backslash-escape')),
+    seoContent: {
+      titleTag: 'Free Online Backslash Escape/Unescape — Convert \\n, \\t Sequences',
+      metaDescription: 'Escape or unescape backslash sequences like \\n, \\t, \\\\. Free backslash converter — 100% client-side, your data stays private.',
+      whatIs: 'Backslash escaping converts special characters like newlines, tabs, and backslashes into their backslash-escaped equivalents (\\n, \\t, \\\\) and vice versa. This is essential when working with strings in code, log files, or configuration where literal control characters need to be represented as visible text.',
+      howToUse: [
+        'Paste your text containing newlines/tabs or escape sequences into the input.',
+        'Click "Escape" to convert control characters to \\n, \\t, etc.',
+        'Or click "Unescape" to convert escape sequences back to actual characters.',
+      ],
+      useCases: [
+        'Converting multi-line text to single-line strings with \\n for use in code',
+        'Unescaping log file output to see actual line breaks and tabs',
+        'Preparing strings for JSON, where newlines must be escaped as \\n',
+        'Debugging issues with double-escaped backslashes (\\\\\\\\)',
+      ],
+      faq: [
+        { question: 'What escape sequences are supported?', answer: 'Common sequences include \\n (newline), \\t (tab), \\r (carriage return), \\\\ (backslash), \\\" (double quote), and \\\' (single quote).' },
+        { question: 'How do I fix double-escaped strings?', answer: 'Paste the double-escaped string and click "Unescape" once to remove one layer of escaping. Repeat if necessary.' },
+        { question: 'Is my data private?', answer: 'Yes. All processing happens in your browser — nothing is sent to any server.' },
+      ],
+      relatedSlugs: ['string-escape', 'unicode-escape', 'url-encode-decode', 'json-formatter'],
+    },
   },
 
   // ── Hash & Crypto ─────────────────────────────────────
@@ -208,6 +737,28 @@ export const tools: ToolDefinition[] = [
     category: 'hash-crypto',
     keywords: ['hash', 'md5', 'sha', 'sha256', 'sha512', 'checksum'],
     component: lazy(() => import('@/tools/hash-crypto/hash-generator')),
+    seoContent: {
+      titleTag: 'Free Online Hash Generator — MD5, SHA-1, SHA-256, SHA-512',
+      metaDescription: 'Generate MD5, SHA-1, SHA-256, and SHA-512 hashes instantly. Free hash generator — 100% client-side, your data never leaves your browser.',
+      whatIs: 'A hash generator computes a fixed-length fingerprint (hash) of any input text using cryptographic algorithms like MD5, SHA-1, SHA-256, and SHA-512. Hashes are used for data integrity verification, password storage, digital signatures, and checksums.',
+      howToUse: [
+        'Enter or paste your text into the input field.',
+        'Select the hash algorithm (MD5, SHA-1, SHA-256, SHA-512, etc.).',
+        'The hash is generated instantly — copy it with one click.',
+      ],
+      useCases: [
+        'Generating checksums to verify file integrity after downloads',
+        'Creating hash digests for password storage comparison',
+        'Computing content hashes for cache busting and ETags',
+        'Verifying data integrity in API webhooks and signatures',
+      ],
+      faq: [
+        { question: 'Which hash algorithm should I use?', answer: 'SHA-256 is the most widely recommended for general use. MD5 and SHA-1 are considered cryptographically broken and should not be used for security purposes, but remain useful for non-security checksums.' },
+        { question: 'Can I reverse a hash to get the original text?', answer: 'No. Cryptographic hash functions are one-way — you cannot reverse-engineer the original input from the hash output. That\'s what makes them secure for password storage.' },
+        { question: 'Is my data secure?', answer: 'Yes. All hashing happens locally in your browser using the Web Crypto API — nothing is sent to any server.' },
+      ],
+      relatedSlugs: ['hmac-generator', 'bcrypt', 'password-generator', 'base64-encode-decode'],
+    },
   },
   {
     slug: 'hmac-generator',
@@ -216,6 +767,28 @@ export const tools: ToolDefinition[] = [
     category: 'hash-crypto',
     keywords: ['hmac', 'hash', 'signature', 'secret', 'key', 'auth'],
     component: lazy(() => import('@/tools/hash-crypto/hmac-generator')),
+    seoContent: {
+      titleTag: 'Free Online HMAC Generator — Create HMAC-SHA256 Signatures',
+      metaDescription: 'Generate HMAC signatures with a secret key. Supports HMAC-SHA256, HMAC-SHA512, and more — 100% client-side, your keys stay private.',
+      whatIs: 'HMAC (Hash-based Message Authentication Code) combines a cryptographic hash function with a secret key to produce an authentication code. It is used to verify both data integrity and authenticity — ensuring a message was not tampered with and came from a trusted sender.',
+      howToUse: [
+        'Enter your message/data in the input field.',
+        'Enter your secret key.',
+        'Select the hash algorithm (SHA-256, SHA-512, etc.) and get the HMAC.',
+      ],
+      useCases: [
+        'Generating webhook signatures for Stripe, GitHub, or Slack integrations',
+        'Creating API request authentication signatures',
+        'Verifying incoming webhook payloads match expected signatures',
+        'Implementing request signing for secure API communication',
+      ],
+      faq: [
+        { question: 'What is the difference between HMAC and a regular hash?', answer: 'A regular hash only ensures data integrity (was it modified?). HMAC uses a secret key to also ensure authenticity (did it come from someone who knows the key?). Without the key, you cannot forge a valid HMAC.' },
+        { question: 'Is it safe to use this tool with my secret keys?', answer: 'Yes. Everything runs locally in your browser. Your secret keys are never transmitted to any server.' },
+        { question: 'Which HMAC algorithm should I use?', answer: 'HMAC-SHA256 is the most commonly used and widely supported. HMAC-SHA512 offers higher security but longer output.' },
+      ],
+      relatedSlugs: ['hash-generator', 'jwt-decoder', 'bcrypt', 'password-generator'],
+    },
   },
   {
     slug: 'uuid-generator',
@@ -224,6 +797,28 @@ export const tools: ToolDefinition[] = [
     category: 'hash-crypto',
     keywords: ['uuid', 'guid', 'unique', 'identifier', 'v4', 'v7'],
     component: lazy(() => import('@/tools/hash-crypto/uuid-generator')),
+    seoContent: {
+      titleTag: 'Free Online UUID Generator — Generate UUID v4 & v7 Instantly',
+      metaDescription: 'Generate UUID v4 and v7 identifiers instantly. Bulk generation supported. Free UUID/GUID generator — 100% client-side, cryptographically random.',
+      whatIs: 'A UUID (Universally Unique Identifier), also known as GUID, is a 128-bit identifier guaranteed to be unique across time and space. UUID v4 uses random numbers, while UUID v7 is time-ordered and sortable — making it ideal for database primary keys.',
+      howToUse: [
+        'Select the UUID version: v4 (random) or v7 (time-ordered).',
+        'Click "Generate" to create a new UUID.',
+        'Generate multiple UUIDs at once with bulk generation.',
+      ],
+      useCases: [
+        'Generating unique identifiers for database records',
+        'Creating correlation IDs for distributed system tracing',
+        'Generating unique keys for API resources and file names',
+        'Using UUID v7 as sortable database primary keys (better than auto-increment for distributed systems)',
+      ],
+      faq: [
+        { question: 'What is the difference between UUID v4 and v7?', answer: 'UUID v4 is purely random — good for general uniqueness. UUID v7 encodes a timestamp in the first bits, making it time-sortable. v7 is better for database primary keys because it reduces index fragmentation.' },
+        { question: 'Are these UUIDs truly unique?', answer: 'Yes. UUID v4 uses cryptographically secure random numbers. The probability of a collision is astronomically low — you\'d need to generate 1 billion UUIDs per second for 85 years to have a 50% chance of one collision.' },
+        { question: 'Is this generator secure?', answer: 'Yes. UUIDs are generated using your browser\'s crypto.getRandomValues() API, which provides cryptographically secure random numbers.' },
+      ],
+      relatedSlugs: ['ulid-generator', 'password-generator', 'random-generator', 'hash-generator'],
+    },
   },
   {
     slug: 'ulid-generator',
@@ -232,6 +827,28 @@ export const tools: ToolDefinition[] = [
     category: 'hash-crypto',
     keywords: ['ulid', 'unique', 'identifier', 'sortable'],
     component: lazy(() => import('@/tools/hash-crypto/ulid-generator')),
+    seoContent: {
+      titleTag: 'Free Online ULID Generator — Sortable Unique Identifiers',
+      metaDescription: 'Generate ULIDs (Universally Unique Lexicographically Sortable Identifiers) instantly. Free ULID generator — 100% client-side.',
+      whatIs: 'A ULID (Universally Unique Lexicographically Sortable Identifier) is a 128-bit identifier that combines a Unix timestamp with random data. Unlike UUID v4, ULIDs are naturally sortable by creation time, use a more compact encoding (26 Crockford Base32 characters), and are URL-safe.',
+      howToUse: [
+        'Click "Generate" to create a new ULID.',
+        'The timestamp portion is decoded and displayed for inspection.',
+        'Generate multiple ULIDs at once with bulk generation.',
+      ],
+      useCases: [
+        'Using as sortable primary keys in databases (MongoDB, PostgreSQL)',
+        'Creating time-ordered event IDs in event-sourcing architectures',
+        'Generating compact, URL-safe unique identifiers for APIs',
+        'Replacing UUID v4 where sort order matters',
+      ],
+      faq: [
+        { question: 'What is the difference between ULID and UUID?', answer: 'ULIDs are lexicographically sortable by creation time, use a more compact encoding (26 vs 36 characters), and are case-insensitive. UUIDs (v4) are purely random and not sortable.' },
+        { question: 'Are ULIDs compatible with UUID columns?', answer: 'ULIDs are 128 bits like UUIDs, so they can be stored in UUID columns in most databases. However, the encoding format is different (Crockford Base32 vs hex-with-dashes).' },
+        { question: 'Is this generator secure?', answer: 'Yes. ULIDs are generated locally in your browser using cryptographically secure random numbers.' },
+      ],
+      relatedSlugs: ['uuid-generator', 'unix-timestamp', 'random-generator', 'hash-generator'],
+    },
   },
   {
     slug: 'password-generator',
@@ -240,6 +857,28 @@ export const tools: ToolDefinition[] = [
     category: 'hash-crypto',
     keywords: ['password', 'generate', 'random', 'strong', 'secure'],
     component: lazy(() => import('@/tools/hash-crypto/password-generator')),
+    seoContent: {
+      titleTag: 'Free Online Password Generator — Generate Strong Random Passwords',
+      metaDescription: 'Generate strong, random passwords with custom length and character options. Free password generator — 100% client-side, no passwords stored or transmitted.',
+      whatIs: 'A password generator creates cryptographically strong, random passwords using your browser\'s secure random number generator. You can customize length, character sets (uppercase, lowercase, numbers, symbols), and exclude ambiguous characters to create passwords that are both secure and usable.',
+      howToUse: [
+        'Set your desired password length (12-128 characters recommended).',
+        'Select which character types to include (uppercase, lowercase, numbers, symbols).',
+        'Click "Generate" and copy the password.',
+      ],
+      useCases: [
+        'Creating strong, unique passwords for online accounts',
+        'Generating random API keys and secret tokens for applications',
+        'Creating temporary passwords for user account provisioning',
+        'Generating passphrases for SSH keys and encryption',
+      ],
+      faq: [
+        { question: 'Are these passwords truly random?', answer: 'Yes. Passwords are generated using your browser\'s crypto.getRandomValues() API, which provides cryptographically secure random numbers — the same source used by password managers.' },
+        { question: 'Is my password stored or transmitted?', answer: 'No. The password is generated entirely in your browser. Nothing is sent to any server, stored, or logged. We never see your passwords.' },
+        { question: 'How long should my password be?', answer: 'At least 12-16 characters for personal accounts. For high-security applications, use 20+ characters. Longer passwords are exponentially harder to crack.' },
+      ],
+      relatedSlugs: ['hash-generator', 'bcrypt', 'uuid-generator', 'random-generator'],
+    },
   },
   {
     slug: 'bcrypt',
@@ -248,6 +887,28 @@ export const tools: ToolDefinition[] = [
     category: 'hash-crypto',
     keywords: ['bcrypt', 'hash', 'verify', 'password'],
     component: lazy(() => import('@/tools/hash-crypto/bcrypt-tool')),
+    seoContent: {
+      titleTag: 'Free Online Bcrypt Hash Generator & Verifier — Hash Passwords with Bcrypt',
+      metaDescription: 'Hash and verify passwords with bcrypt. Adjustable cost factor. Free bcrypt tool — 100% client-side, your passwords never leave your browser.',
+      whatIs: 'Bcrypt is a password hashing function designed to be computationally expensive, making it resistant to brute-force attacks. Unlike MD5 or SHA, bcrypt automatically handles salting and has an adjustable cost factor that can be increased as hardware gets faster. It is the industry standard for secure password storage.',
+      howToUse: [
+        'Enter a password in the input field to hash it.',
+        'Adjust the cost factor (rounds) — higher is more secure but slower.',
+        'To verify, paste a bcrypt hash and the password to check against it.',
+      ],
+      useCases: [
+        'Generating bcrypt hashes for storing passwords in databases',
+        'Verifying passwords against existing bcrypt hashes during debugging',
+        'Testing different cost factors to find the right security/performance balance',
+        'Generating hashes for seed data in development and staging environments',
+      ],
+      faq: [
+        { question: 'What cost factor should I use?', answer: 'A cost factor of 10-12 is recommended for most applications. Each increment doubles the computation time. Test on your production hardware to find a balance where hashing takes 100-300ms.' },
+        { question: 'Why use bcrypt instead of SHA-256?', answer: 'SHA-256 is too fast for password hashing — attackers can try billions of guesses per second. Bcrypt is intentionally slow and includes a built-in salt, making brute-force attacks impractical.' },
+        { question: 'Is my password safe in this tool?', answer: 'Yes. Bcrypt hashing runs entirely in your browser. Your password is never sent to any server.' },
+      ],
+      relatedSlugs: ['hash-generator', 'password-generator', 'hmac-generator', 'base64-encode-decode'],
+    },
   },
 
   // ── Converters ────────────────────────────────────────
@@ -258,6 +919,28 @@ export const tools: ToolDefinition[] = [
     category: 'converters',
     keywords: ['json', 'yaml', 'convert', 'transform'],
     component: lazy(() => import('@/tools/converters/json-yaml')),
+    seoContent: {
+      titleTag: 'Free Online JSON to YAML Converter — Convert JSON ↔ YAML',
+      metaDescription: 'Convert between JSON and YAML formats instantly. Free JSON to YAML and YAML to JSON converter — 100% client-side, your data stays private.',
+      whatIs: 'This tool converts data between JSON and YAML formats. JSON is the standard for APIs and JavaScript, while YAML is preferred for configuration files (Docker Compose, Kubernetes, GitHub Actions). Converting between them is a common need when working across different tools.',
+      howToUse: [
+        'Paste JSON or YAML into the input area.',
+        'Click "To YAML" or "To JSON" to convert.',
+        'Copy the converted output.',
+      ],
+      useCases: [
+        'Converting API responses (JSON) to configuration format (YAML)',
+        'Transforming Kubernetes YAML configs to JSON for programmatic editing',
+        'Converting between formats when migrating between tools',
+        'Generating YAML from JSON schemas for documentation',
+      ],
+      faq: [
+        { question: 'Are all JSON features supported in YAML?', answer: 'Yes. YAML is a superset of JSON, so any valid JSON can be converted to YAML. However, some YAML features (anchors, aliases) don\'t have JSON equivalents.' },
+        { question: 'Does the conversion preserve comments?', answer: 'JSON does not support comments. When converting from YAML to JSON, comments are lost. When converting from JSON to YAML, no comments exist to preserve.' },
+        { question: 'Is my data private?', answer: 'Yes. All conversion happens in your browser — nothing is sent to any server.' },
+      ],
+      relatedSlugs: ['json-formatter', 'yaml-formatter', 'json-csv', 'json-path'],
+    },
   },
   {
     slug: 'json-csv',
@@ -266,6 +949,28 @@ export const tools: ToolDefinition[] = [
     category: 'converters',
     keywords: ['json', 'csv', 'convert', 'spreadsheet', 'table'],
     component: lazy(() => import('@/tools/converters/json-csv')),
+    seoContent: {
+      titleTag: 'Free Online JSON to CSV Converter — Convert JSON ↔ CSV',
+      metaDescription: 'Convert between JSON and CSV formats instantly. Free JSON to CSV and CSV to JSON converter — 100% client-side, your data stays private.',
+      whatIs: 'This tool converts data between JSON arrays and CSV (Comma-Separated Values) format. JSON is the standard for APIs, while CSV is used for spreadsheets, data imports/exports, and database dumps. Converting between them bridges the gap between web APIs and data analysis tools.',
+      howToUse: [
+        'Paste a JSON array of objects or CSV data into the input.',
+        'Click "To CSV" or "To JSON" to convert.',
+        'Copy or download the converted output.',
+      ],
+      useCases: [
+        'Converting API response data to CSV for analysis in Excel or Google Sheets',
+        'Transforming CSV exports to JSON for use in web applications',
+        'Preparing data for database imports from spreadsheet exports',
+        'Creating CSV downloads from JSON API endpoints',
+      ],
+      faq: [
+        { question: 'How are nested JSON objects handled?', answer: 'Nested objects are flattened using dot notation for column headers (e.g., "address.city"). Deeply nested arrays may require additional handling.' },
+        { question: 'Does this handle special characters in CSV?', answer: 'Yes. Values containing commas, quotes, or newlines are properly escaped with quotes per the CSV specification.' },
+        { question: 'Is my data private?', answer: 'Yes. All conversion happens in your browser — nothing is sent to any server.' },
+      ],
+      relatedSlugs: ['json-formatter', 'json-yaml', 'json-to-typescript', 'json-path'],
+    },
   },
   {
     slug: 'json-to-typescript',
@@ -274,6 +979,28 @@ export const tools: ToolDefinition[] = [
     category: 'converters',
     keywords: ['json', 'typescript', 'interface', 'type', 'generate'],
     component: lazy(() => import('@/tools/converters/json-to-typescript')),
+    seoContent: {
+      titleTag: 'Free Online JSON to TypeScript Converter — Generate TS Interfaces from JSON',
+      metaDescription: 'Generate TypeScript interfaces from JSON data instantly. Free JSON to TypeScript converter — 100% client-side, your data stays private.',
+      whatIs: 'This tool analyzes a JSON object and automatically generates TypeScript interface definitions that match its structure. It handles nested objects, arrays, optional fields, and union types — saving you the tedious work of manually writing type definitions for API responses.',
+      howToUse: [
+        'Paste a JSON object or API response into the input.',
+        'TypeScript interfaces are generated automatically.',
+        'Copy the interfaces into your TypeScript project.',
+      ],
+      useCases: [
+        'Generating TypeScript types from REST API response samples',
+        'Creating type definitions for third-party API integrations',
+        'Converting JSON config files to typed TypeScript objects',
+        'Bootstrapping type-safe data models from database JSON exports',
+      ],
+      faq: [
+        { question: 'Does this handle nested objects?', answer: 'Yes. Nested objects are converted to separate interfaces with proper references. Arrays of objects also get their own interface definitions.' },
+        { question: 'Does it detect optional fields?', answer: 'The tool generates required fields by default. For optional field detection, provide multiple JSON samples or manually mark fields as optional.' },
+        { question: 'Is my data private?', answer: 'Yes. All conversion happens in your browser — nothing is sent to any server.' },
+      ],
+      relatedSlugs: ['json-to-go-struct', 'json-formatter', 'json-csv', 'json-path'],
+    },
   },
   {
     slug: 'json-to-go-struct',
@@ -282,6 +1009,28 @@ export const tools: ToolDefinition[] = [
     category: 'converters',
     keywords: ['json', 'go', 'golang', 'struct', 'generate'],
     component: lazy(() => import('@/tools/converters/json-to-go-struct')),
+    seoContent: {
+      titleTag: 'Free Online JSON to Go Struct Converter — Generate Go Structs from JSON',
+      metaDescription: 'Generate Go structs with json tags from JSON data instantly. Free JSON to Go converter — 100% client-side, your data stays private.',
+      whatIs: 'This tool analyzes JSON data and generates corresponding Go struct definitions complete with proper json struct tags. It handles nested objects, arrays, and Go naming conventions (PascalCase field names), saving you the manual work of writing struct definitions for API integrations.',
+      howToUse: [
+        'Paste a JSON object or API response into the input.',
+        'Go struct definitions are generated automatically with json tags.',
+        'Copy the structs into your Go project.',
+      ],
+      useCases: [
+        'Generating Go structs from REST API response samples',
+        'Creating data models for JSON unmarshaling in Go services',
+        'Converting JSON schemas to Go types for microservices',
+        'Bootstrapping Go types from third-party API documentation',
+      ],
+      faq: [
+        { question: 'Does this generate proper json tags?', answer: 'Yes. Each struct field includes a json tag with the original JSON key name, enabling correct marshaling/unmarshaling with encoding/json.' },
+        { question: 'Does this handle nested objects?', answer: 'Yes. Nested objects are converted to separate Go structs with proper type references. Slices of objects also get their own struct definitions.' },
+        { question: 'Is my data private?', answer: 'Yes. All conversion happens in your browser — nothing is sent to any server.' },
+      ],
+      relatedSlugs: ['json-to-typescript', 'json-formatter', 'json-yaml', 'json-path'],
+    },
   },
   {
     slug: 'number-base-converter',
@@ -290,6 +1039,28 @@ export const tools: ToolDefinition[] = [
     category: 'converters',
     keywords: ['number', 'base', 'binary', 'hex', 'octal', 'decimal', 'convert'],
     component: lazy(() => import('@/tools/converters/number-base')),
+    seoContent: {
+      titleTag: 'Free Online Number Base Converter — Binary, Hex, Octal, Decimal',
+      metaDescription: 'Convert numbers between binary, hexadecimal, octal, and decimal. Free number base converter — 100% client-side, instant results.',
+      whatIs: 'A number base converter transforms numbers between different numeral systems: binary (base 2), octal (base 8), decimal (base 10), and hexadecimal (base 16). These conversions are fundamental in programming, networking, and digital electronics.',
+      howToUse: [
+        'Enter a number in any base (binary, octal, decimal, or hex).',
+        'The tool instantly shows the equivalent value in all other bases.',
+        'Copy any result with one click.',
+      ],
+      useCases: [
+        'Converting hex color codes to RGB decimal values',
+        'Working with binary flags and bitmasks in programming',
+        'Converting IP addresses and subnet masks between formats',
+        'Understanding memory addresses and Unicode code points in hex',
+      ],
+      faq: [
+        { question: 'Can I convert between any two bases?', answer: 'Yes. The tool supports conversion between binary (base 2), octal (base 8), decimal (base 10), and hexadecimal (base 16). All conversions happen simultaneously.' },
+        { question: 'Does this support large numbers?', answer: 'Yes. The converter handles large numbers using JavaScript\'s BigInt when necessary for precision beyond 64-bit integers.' },
+        { question: 'Is my data private?', answer: 'Yes. All conversions happen in your browser — nothing is sent to any server.' },
+      ],
+      relatedSlugs: ['color-converter', 'unix-timestamp', 'hash-generator', 'px-rem-converter'],
+    },
   },
   {
     slug: 'color-converter',
@@ -298,6 +1069,28 @@ export const tools: ToolDefinition[] = [
     category: 'converters',
     keywords: ['color', 'hex', 'rgb', 'hsl', 'convert', 'picker'],
     component: lazy(() => import('@/tools/converters/color-converter')),
+    seoContent: {
+      titleTag: 'Free Online Color Converter & Picker — HEX, RGB, HSL Converter',
+      metaDescription: 'Convert colors between HEX, RGB, HSL, and more formats. Free color converter with visual picker — 100% client-side, instant results.',
+      whatIs: 'A color converter transforms color values between different formats used in web development and design: HEX (#FF5733), RGB (rgb(255, 87, 51)), HSL (hsl(11, 100%, 60%)), and others. The visual picker helps you select colors and instantly see all format equivalents.',
+      howToUse: [
+        'Enter a color in any format (HEX, RGB, HSL, etc.) or use the visual picker.',
+        'All equivalent formats are displayed instantly.',
+        'Copy any format with one click for use in your CSS or design tools.',
+      ],
+      useCases: [
+        'Converting HEX colors from design tools to RGB/HSL for CSS',
+        'Finding the HEX value of an RGB color from a color picker',
+        'Adjusting color hue, saturation, and lightness using HSL values',
+        'Converting colors between design tokens and code implementations',
+      ],
+      faq: [
+        { question: 'What color formats are supported?', answer: 'The tool supports HEX (3, 6, and 8-digit), RGB, RGBA, HSL, HSLA, and named CSS colors.' },
+        { question: 'Can I adjust alpha/transparency?', answer: 'Yes. The tool supports RGBA and HSLA formats with alpha channel values from 0 (fully transparent) to 1 (fully opaque).' },
+        { question: 'Is my data private?', answer: 'Yes. All color conversions happen in your browser — nothing is sent to any server.' },
+      ],
+      relatedSlugs: ['px-rem-converter', 'css-formatter', 'number-base-converter', 'html-formatter'],
+    },
   },
   {
     slug: 'unix-timestamp',
@@ -306,6 +1099,28 @@ export const tools: ToolDefinition[] = [
     category: 'converters',
     keywords: ['unix', 'timestamp', 'epoch', 'date', 'time', 'convert'],
     component: lazy(() => import('@/tools/converters/unix-timestamp')),
+    seoContent: {
+      titleTag: 'Free Online Unix Timestamp Converter — Epoch to Date & Date to Epoch',
+      metaDescription: 'Convert Unix timestamps to human-readable dates and vice versa. Free epoch converter — 100% client-side, instant results.',
+      whatIs: 'A Unix timestamp (epoch time) is the number of seconds elapsed since January 1, 1970 (UTC). This converter transforms between Unix timestamps and human-readable dates, supporting seconds and milliseconds precision — essential for debugging APIs, logs, and databases that store time as integers.',
+      howToUse: [
+        'Enter a Unix timestamp (seconds or milliseconds) to see the human-readable date.',
+        'Or enter a date/time to get the corresponding Unix timestamp.',
+        'The current timestamp is shown for reference.',
+      ],
+      useCases: [
+        'Converting timestamps from API responses and database records',
+        'Debugging JWT token expiration times (exp claim)',
+        'Converting between timestamp formats in log files',
+        'Calculating time differences between events using epoch values',
+      ],
+      faq: [
+        { question: 'What is the difference between seconds and milliseconds timestamps?', answer: 'Unix timestamps in seconds are 10 digits (e.g., 1704067200). Millisecond timestamps are 13 digits (e.g., 1704067200000). JavaScript\'s Date.now() returns milliseconds, while many Unix tools use seconds.' },
+        { question: 'What is the Year 2038 problem?', answer: 'The Year 2038 problem occurs when 32-bit signed integer timestamps overflow on January 19, 2038. Most modern systems use 64-bit timestamps which won\'t overflow for billions of years.' },
+        { question: 'Is my data private?', answer: 'Yes. All conversions happen in your browser — nothing is sent to any server.' },
+      ],
+      relatedSlugs: ['cron-parser', 'jwt-decoder', 'number-base-converter', 'json-formatter'],
+    },
   },
   {
     slug: 'cron-parser',
@@ -314,6 +1129,28 @@ export const tools: ToolDefinition[] = [
     category: 'converters',
     keywords: ['cron', 'schedule', 'expression', 'parse', 'job'],
     component: lazy(() => import('@/tools/converters/cron-parser')),
+    seoContent: {
+      titleTag: 'Free Online Cron Expression Parser — Explain & Validate Cron Schedules',
+      metaDescription: 'Parse and explain cron schedule expressions in plain English. See next run times. Free cron parser — 100% client-side, instant results.',
+      whatIs: 'A cron expression defines a schedule for recurring tasks (like backups, reports, or deployments). Cron syntax uses five fields (minute, hour, day of month, month, day of week) to specify when a job should run. This parser translates cron expressions into plain English and shows the next scheduled run times.',
+      howToUse: [
+        'Enter a cron expression (e.g., "0 9 * * MON-FRI").',
+        'The tool shows a plain-English description of the schedule.',
+        'View the next 5-10 scheduled run times to verify correctness.',
+      ],
+      useCases: [
+        'Validating cron expressions before deploying them to production',
+        'Understanding complex cron schedules from inherited codebases',
+        'Creating cron expressions for CI/CD pipeline schedules',
+        'Debugging GitHub Actions, GitLab CI, or Jenkins scheduled triggers',
+      ],
+      faq: [
+        { question: 'What cron format is supported?', answer: 'Standard 5-field cron syntax (minute, hour, day of month, month, day of week) is supported, including ranges, steps, lists, and special characters (* / - , L W #).' },
+        { question: 'Does this support 6-field (with seconds) cron?', answer: 'The primary focus is on standard 5-field cron. Some implementations may support the optional seconds field used by tools like Quartz Scheduler.' },
+        { question: 'Is my data private?', answer: 'Yes. All parsing happens in your browser — nothing is sent to any server.' },
+      ],
+      relatedSlugs: ['unix-timestamp', 'regex-tester', 'json-formatter', 'text-diff'],
+    },
   },
   {
     slug: 'json-path',
@@ -322,6 +1159,28 @@ export const tools: ToolDefinition[] = [
     category: 'converters',
     keywords: ['json', 'path', 'jsonpath', 'query', 'evaluate'],
     component: lazy(() => import('@/tools/converters/json-path')),
+    seoContent: {
+      titleTag: 'Free Online JSONPath Evaluator — Query JSON Data with JSONPath',
+      metaDescription: 'Evaluate JSONPath expressions against JSON data with live results. Free JSONPath tester — 100% client-side, your data stays private.',
+      whatIs: 'JSONPath is a query language for JSON, similar to XPath for XML. It lets you extract specific values, arrays, or nested objects from complex JSON structures using path expressions like $.store.book[*].author. This evaluator tests JSONPath queries against your data in real-time.',
+      howToUse: [
+        'Paste your JSON data into the data input area.',
+        'Enter a JSONPath expression (e.g., "$.users[0].name").',
+        'The matching results are displayed instantly.',
+      ],
+      useCases: [
+        'Extracting specific fields from large API responses',
+        'Testing JSONPath queries before using them in code or Postman',
+        'Debugging JSONPath expressions for data pipeline transformations',
+        'Learning JSONPath syntax with immediate visual feedback',
+      ],
+      faq: [
+        { question: 'What JSONPath syntax is supported?', answer: 'Standard JSONPath syntax including dot notation ($.), bracket notation ($[]), wildcards (*), array slices ([0:5]), recursive descent (..), and filter expressions (?()).' },
+        { question: 'How is JSONPath different from jq?', answer: 'JSONPath uses a path expression syntax ($.) designed for programmatic use. jq uses a pipe-based functional syntax. Both query JSON, but jq is more powerful for complex transformations.' },
+        { question: 'Is my data private?', answer: 'Yes. All evaluation happens in your browser — nothing is sent to any server.' },
+      ],
+      relatedSlugs: ['json-formatter', 'json-yaml', 'json-csv', 'json-to-typescript'],
+    },
   },
   {
     slug: 'px-rem-converter',
@@ -330,6 +1189,28 @@ export const tools: ToolDefinition[] = [
     category: 'converters',
     keywords: ['px', 'rem', 'pixel', 'convert', 'css', 'font'],
     component: lazy(() => import('@/tools/converters/px-rem-converter')),
+    seoContent: {
+      titleTag: 'Free Online Px to Rem Converter — Convert Pixels ↔ Rem Units',
+      metaDescription: 'Convert between pixels (px) and rem units with custom base font size. Free px/rem converter — 100% client-side, instant results.',
+      whatIs: 'Rem units are relative CSS units based on the root element\'s font size (typically 16px). Converting between px and rem is essential for responsive web design — rem values scale with user font preferences, while pixels are fixed. This tool converts both directions with customizable base font size.',
+      howToUse: [
+        'Enter a pixel value or rem value in the corresponding input.',
+        'Set your base font size (default is 16px).',
+        'The conversion is calculated instantly in both directions.',
+      ],
+      useCases: [
+        'Converting pixel values from design mockups (Figma, Sketch) to rem for CSS',
+        'Building responsive typography systems with rem-based sizing',
+        'Migrating existing CSS from px to rem for better accessibility',
+        'Calculating rem values for spacing, margins, and padding',
+      ],
+      faq: [
+        { question: 'Why should I use rem instead of px?', answer: 'Rem units respect the user\'s browser font size preferences, improving accessibility. If a user sets their default font to 18px, rem-based layouts scale accordingly, while pixel-based layouts remain fixed.' },
+        { question: 'What is the default base font size?', answer: 'Most browsers default to 16px, so 1rem = 16px. Some design systems use a different base (e.g., 10px with html { font-size: 62.5% }) to make rem math easier (1rem = 10px).' },
+        { question: 'Is my data private?', answer: 'Yes. All conversions happen in your browser — nothing is sent to any server.' },
+      ],
+      relatedSlugs: ['color-converter', 'css-formatter', 'number-base-converter', 'html-formatter'],
+    },
   },
 
   // ── Web / Network ─────────────────────────────────────
@@ -340,6 +1221,28 @@ export const tools: ToolDefinition[] = [
     category: 'web-network',
     keywords: ['http', 'status', 'code', 'response', 'api', '404', '500'],
     component: lazy(() => import('@/tools/web-network/http-status-codes')),
+    seoContent: {
+      titleTag: 'HTTP Status Codes Reference — Complete List with Explanations',
+      metaDescription: 'Look up HTTP status codes (200, 301, 404, 500, etc.) with clear explanations and usage examples. Free reference — searchable and always up-to-date.',
+      whatIs: 'HTTP status codes are three-digit numbers returned by web servers to indicate the result of an HTTP request. They are grouped into 5 categories: 1xx (informational), 2xx (success), 3xx (redirection), 4xx (client error), and 5xx (server error). This reference explains every standard code with real-world examples.',
+      howToUse: [
+        'Browse status codes by category or search for a specific code.',
+        'Click on any status code to see its full description and common usage.',
+        'Use the search to quickly find codes like 404, 502, or 429.',
+      ],
+      useCases: [
+        'Debugging API responses by understanding what each status code means',
+        'Choosing the correct status code when building REST APIs',
+        'Troubleshooting web server errors (502 Bad Gateway, 503 Service Unavailable)',
+        'Understanding redirect chains (301 vs 302 vs 307)',
+      ],
+      faq: [
+        { question: 'What is the difference between 301 and 302 redirects?', answer: '301 is a permanent redirect — search engines transfer SEO value to the new URL. 302 is a temporary redirect — the original URL retains its SEO value. Use 301 for URL changes and 302 for temporary maintenance.' },
+        { question: 'What does 429 Too Many Requests mean?', answer: '429 indicates rate limiting — the client has sent too many requests in a given time period. The response usually includes a Retry-After header indicating how long to wait.' },
+        { question: 'What is the difference between 401 and 403?', answer: '401 Unauthorized means the request lacks valid authentication. 403 Forbidden means the server understood the request but refuses to authorize it — the client\'s identity is known but lacks permission.' },
+      ],
+      relatedSlugs: ['url-parser', 'mime-type-lookup', 'jwt-decoder', 'json-formatter'],
+    },
   },
   {
     slug: 'mime-type-lookup',
@@ -348,6 +1251,28 @@ export const tools: ToolDefinition[] = [
     category: 'web-network',
     keywords: ['mime', 'type', 'content', 'extension', 'file'],
     component: lazy(() => import('@/tools/web-network/mime-type-lookup')),
+    seoContent: {
+      titleTag: 'Free Online MIME Type Lookup — Find Content Types by File Extension',
+      metaDescription: 'Look up MIME types by file extension and vice versa. Free MIME type reference — searchable database of content types for web development.',
+      whatIs: 'MIME types (Media Types) indicate the nature and format of a file or data stream. They follow the format type/subtype (e.g., text/html, application/json, image/png). Web servers use MIME types in Content-Type headers to tell browsers how to handle responses.',
+      howToUse: [
+        'Search by file extension (e.g., ".json") or MIME type (e.g., "application/json").',
+        'The corresponding MIME type or extensions are displayed instantly.',
+        'Browse common MIME types by category.',
+      ],
+      useCases: [
+        'Setting correct Content-Type headers in API responses',
+        'Configuring web server MIME type mappings (nginx, Apache)',
+        'Validating file uploads by checking MIME types',
+        'Debugging incorrect file downloads caused by wrong Content-Type headers',
+      ],
+      faq: [
+        { question: 'What is the difference between MIME type and Content-Type?', answer: 'They\'re essentially the same thing. "MIME type" is the standard terminology, while "Content-Type" is the HTTP header name that carries the MIME type value.' },
+        { question: 'What MIME type should I use for JSON APIs?', answer: 'Use "application/json" for JSON API responses. "text/json" is technically incorrect but sometimes seen in older implementations.' },
+        { question: 'Is my data private?', answer: 'Yes. All lookups happen in your browser — nothing is sent to any server.' },
+      ],
+      relatedSlugs: ['http-status-codes', 'url-parser', 'base64-file', 'svg-preview'],
+    },
   },
   {
     slug: 'url-parser',
@@ -356,6 +1281,28 @@ export const tools: ToolDefinition[] = [
     category: 'web-network',
     keywords: ['url', 'parse', 'query', 'path', 'host', 'protocol'],
     component: lazy(() => import('@/tools/web-network/url-parser')),
+    seoContent: {
+      titleTag: 'Free Online URL Parser — Break Down URL Components Instantly',
+      metaDescription: 'Parse and inspect URL components (protocol, host, path, query, fragment). Free URL parser — 100% client-side, your URLs stay private.',
+      whatIs: 'A URL parser breaks down a URL into its individual components: protocol, host, port, path, query parameters, and fragment. This helps you understand complex URLs, debug routing issues, and extract specific parameters from long URLs with multiple query strings.',
+      howToUse: [
+        'Paste a URL into the input field.',
+        'The tool instantly breaks it into components: protocol, host, port, path, query params, and fragment.',
+        'Query parameters are individually parsed and displayed.',
+      ],
+      useCases: [
+        'Debugging complex URLs with multiple query parameters',
+        'Extracting UTM parameters from marketing URLs',
+        'Understanding URL routing patterns in web applications',
+        'Inspecting OAuth callback URLs with encoded parameters',
+      ],
+      faq: [
+        { question: 'What URL components are parsed?', answer: 'The parser extracts: protocol (http/https), hostname, port, pathname, search (query string), individual query parameters, hash (fragment), and the full origin.' },
+        { question: 'Does this decode URL-encoded characters?', answer: 'Yes. Query parameter values are automatically decoded (percent-encoding → readable text) for easy inspection.' },
+        { question: 'Is my data private?', answer: 'Yes. All parsing happens in your browser — nothing is sent to any server.' },
+      ],
+      relatedSlugs: ['url-encode-decode', 'http-status-codes', 'qr-code-generator', 'json-formatter'],
+    },
   },
   {
     slug: 'qr-code-generator',
@@ -364,6 +1311,28 @@ export const tools: ToolDefinition[] = [
     category: 'web-network',
     keywords: ['qr', 'code', 'generate', 'barcode', 'scan'],
     component: lazy(() => import('@/tools/web-network/qr-code-generator')),
+    seoContent: {
+      titleTag: 'Free Online QR Code Generator — Create QR Codes from Text or URLs',
+      metaDescription: 'Generate QR codes from text, URLs, or any data instantly. Download as PNG. Free QR code generator — 100% client-side, no watermarks.',
+      whatIs: 'A QR (Quick Response) code is a two-dimensional barcode that can be scanned by smartphone cameras to quickly access URLs, text, contact information, or WiFi credentials. This generator creates high-quality QR codes that can be downloaded as images for use in print or digital materials.',
+      howToUse: [
+        'Enter text, a URL, or any data into the input field.',
+        'The QR code is generated instantly.',
+        'Download the QR code as a PNG image.',
+      ],
+      useCases: [
+        'Creating QR codes for website URLs on business cards and flyers',
+        'Generating WiFi network QR codes for easy guest access',
+        'Creating QR codes for app download links',
+        'Adding QR codes to printed documentation that links to online resources',
+      ],
+      faq: [
+        { question: 'What data can I encode in a QR code?', answer: 'Any text data including URLs, plain text, email addresses, phone numbers, WiFi credentials (WIFI:T:WPA;S:MyNetwork;P:MyPassword;;), and vCard contact information.' },
+        { question: 'What is the maximum data size for a QR code?', answer: 'QR codes can hold up to 3,000 alphanumeric characters. However, more data means more complex (denser) codes that are harder to scan. Keep data under 500 characters for best scan reliability.' },
+        { question: 'Is my data private?', answer: 'Yes. QR codes are generated entirely in your browser. Your data is never sent to any server.' },
+      ],
+      relatedSlugs: ['url-parser', 'url-encode-decode', 'base64-encode-decode', 'svg-preview'],
+    },
   },
   {
     slug: 'svg-preview',
@@ -372,6 +1341,28 @@ export const tools: ToolDefinition[] = [
     category: 'web-network',
     keywords: ['svg', 'preview', 'optimize', 'vector', 'image'],
     component: lazy(() => import('@/tools/web-network/svg-preview')),
+    seoContent: {
+      titleTag: 'Free Online SVG Preview & Optimizer — View and Optimize SVG Files',
+      metaDescription: 'Preview SVG files and optimize them for smaller file sizes. Free SVG viewer and optimizer — 100% client-side, your files stay private.',
+      whatIs: 'SVG (Scalable Vector Graphics) is an XML-based vector image format for the web. This tool lets you preview SVG code in real-time and optimize it by removing unnecessary metadata, comments, and redundant attributes — reducing file size while maintaining visual quality.',
+      howToUse: [
+        'Paste your SVG code or upload an SVG file.',
+        'The preview renders the SVG in real-time as you edit.',
+        'Use the optimizer to reduce file size.',
+      ],
+      useCases: [
+        'Previewing SVG icons and illustrations before adding to a project',
+        'Optimizing SVG files exported from design tools (Figma, Illustrator, Inkscape)',
+        'Debugging SVG rendering issues by editing code with live preview',
+        'Reducing SVG file sizes for faster web page loading',
+      ],
+      faq: [
+        { question: 'How much can SVG files be optimized?', answer: 'SVGs from design tools often contain 30-60% unnecessary data (editor metadata, hidden elements, redundant attributes). Optimization can significantly reduce file size without visual changes.' },
+        { question: 'Does optimization affect SVG quality?', answer: 'No. Vector graphics are resolution-independent. Optimization removes metadata and cleans up code without changing the visual output.' },
+        { question: 'Are my SVG files private?', answer: 'Yes. All previewing and optimization happens in your browser — nothing is sent to any server.' },
+      ],
+      relatedSlugs: ['html-formatter', 'xml-formatter', 'base64-file', 'qr-code-generator'],
+    },
   },
 
   // ── Data Generators ───────────────────────────────────
@@ -382,6 +1373,28 @@ export const tools: ToolDefinition[] = [
     category: 'data-generators',
     keywords: ['mock', 'data', 'fake', 'generate', 'test', 'faker'],
     component: lazy(() => import('@/tools/data-generators/mock-data-generator')),
+    seoContent: {
+      titleTag: 'Free Online Mock Data Generator — Generate Fake Test Data (Faker)',
+      metaDescription: 'Generate realistic mock data for testing — names, emails, addresses, and more. Free fake data generator powered by Faker.js — 100% client-side.',
+      whatIs: 'A mock data generator creates realistic but fake data for testing, development, and prototyping. Using the Faker.js library, it generates names, emails, addresses, phone numbers, dates, and custom schemas — perfect for populating databases, testing UI components, and building demos without using real user data.',
+      howToUse: [
+        'Select the data fields you need (name, email, address, etc.).',
+        'Choose the number of records to generate.',
+        'Export the generated data as JSON, CSV, or copy directly.',
+      ],
+      useCases: [
+        'Populating development databases with realistic test data',
+        'Creating demo data for UI component testing and screenshots',
+        'Generating sample datasets for API endpoint testing',
+        'Building prototypes that feel real without using actual user data',
+      ],
+      faq: [
+        { question: 'What data types can I generate?', answer: 'Names, emails, addresses, phone numbers, dates, UUIDs, company names, job titles, URLs, IP addresses, and many more. The generator uses Faker.js which supports dozens of data types.' },
+        { question: 'Can I generate data in specific locales?', answer: 'The generator supports multiple locales for generating region-specific names, addresses, and phone number formats.' },
+        { question: 'Is my data private?', answer: 'Yes. All data generation happens in your browser — nothing is sent to any server. The generated data is completely fake and not derived from real people.' },
+      ],
+      relatedSlugs: ['random-generator', 'uuid-generator', 'json-formatter', 'json-csv'],
+    },
   },
   {
     slug: 'random-generator',
@@ -390,6 +1403,28 @@ export const tools: ToolDefinition[] = [
     category: 'data-generators',
     keywords: ['random', 'number', 'string', 'generate'],
     component: lazy(() => import('@/tools/data-generators/random-generator')),
+    seoContent: {
+      titleTag: 'Free Online Random Number & String Generator — Cryptographically Secure',
+      metaDescription: 'Generate random numbers and strings with custom ranges and character sets. Free random generator — 100% client-side, cryptographically secure.',
+      whatIs: 'This tool generates random numbers within custom ranges and random strings with configurable length and character sets. It uses your browser\'s cryptographically secure random number generator (crypto.getRandomValues), making the output suitable for tokens, IDs, and security-sensitive applications.',
+      howToUse: [
+        'For numbers: set the minimum and maximum values and click "Generate".',
+        'For strings: set the length, select character types, and click "Generate".',
+        'Generate multiple values at once with bulk generation.',
+      ],
+      useCases: [
+        'Generating random test data for development and QA',
+        'Creating random tokens and session IDs',
+        'Picking random numbers for decision-making and lotteries',
+        'Generating random alphanumeric codes for verification systems',
+      ],
+      faq: [
+        { question: 'Is the randomness cryptographically secure?', answer: 'Yes. The generator uses your browser\'s crypto.getRandomValues() API, which provides cryptographically secure pseudo-random numbers suitable for security applications.' },
+        { question: 'Can I generate truly random numbers?', answer: 'crypto.getRandomValues() provides cryptographically secure pseudo-random numbers, which are indistinguishable from truly random numbers for all practical purposes.' },
+        { question: 'Is my data private?', answer: 'Yes. All generation happens in your browser — nothing is sent to any server.' },
+      ],
+      relatedSlugs: ['password-generator', 'uuid-generator', 'mock-data-generator', 'ulid-generator'],
+    },
   },
 ]
 
