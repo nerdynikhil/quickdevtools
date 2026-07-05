@@ -58,5 +58,20 @@ export function useSeoMeta(opts: SeoMetaOptions) {
         if (opts.twitterTitle) setMeta('twitter:title', opts.twitterTitle)
         if (opts.twitterDescription) setMeta('twitter:description', opts.twitterDescription)
         if (opts.twitterImage) setMeta('twitter:image', opts.twitterImage)
-    })
+    }, [
+        opts.title,
+        opts.description,
+        opts.canonical,
+        opts.keywords,
+        opts.ogType,
+        opts.ogSiteName,
+        opts.ogTitle,
+        opts.ogDescription,
+        opts.ogUrl,
+        opts.ogImage,
+        opts.twitterCard,
+        opts.twitterTitle,
+        opts.twitterDescription,
+        opts.twitterImage,
+    ])
 }
