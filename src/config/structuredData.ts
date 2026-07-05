@@ -1,4 +1,5 @@
 import { SITE_URL, SITE_NAME, SITE_TAGLINE, SITE_DESCRIPTION } from './seo'
+import type { FaqItem } from '@/registry/types'
 
 export function buildHomePageSchema() {
   return {
@@ -66,5 +67,20 @@ export function buildBreadcrumbSchema(tool?: {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: items,
+  }
+}
+
+export function buildFAQSchema(faq: FaqItem[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer,
+      },
+    })),
   }
 }
