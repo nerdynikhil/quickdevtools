@@ -1,7 +1,12 @@
 [build]
-  command = "npm run build"
+  command = "npm run build:prerender"
   publish = "dist"
 
+# Serve pre-rendered HTML files for each tool route
+# Netlify will serve dist/<slug>/index.html automatically
+# for paths like /json-formatter → dist/json-formatter/index.html
+
+# Fallback: SPA client-side routing for any unmatched routes
 [[redirects]]
   from = "/*"
   to = "/index.html"
