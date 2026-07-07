@@ -3,6 +3,10 @@ import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 
 export function AnalyticsTracker() {
+  return <Analytics />
+}
+
+export function usePageviewTracking() {
   const location = useLocation()
 
   useEffect(() => {
@@ -10,6 +14,4 @@ export function AnalyticsTracker() {
       window.va('pageview', { page: location.pathname + location.search })
     }
   }, [location])
-
-  return <Analytics />
 }
