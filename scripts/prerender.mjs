@@ -95,20 +95,37 @@ async function prerender() {
   const server = await startServer(PORT)
   console.log(`📡 Static server running on http://localhost:${PORT}`)
 
-  // Dynamic import of puppeteer
-  let puppeteer
-  try {
-    puppeteer = await import('puppeteer')
-  } catch {
-    console.error('❌ puppeteer not found. Install it: npm install -D puppeteer')
-    server.close()
-    process.exit(1)
-  }
+  // Detect Vercel build environment (Amazon Linux lacks Chromium system deps).
+  // Use @sparticuz/chromium (statically-linked) with puppeteer-core there.
+  const isVercel = process.env.VERCEL === '1'
+  let browser
 
-  const browser = await puppeteer.default.launch({
-    headless: true,
-    args: ['--no-sandbox', '--disable-setuid-sandbox'],
-  })
+  if (isVercel) {
+    const [chromiumModule, puppeteerCoreModule] = await Promise.all([
+      import('@sparticuz/chromium'),
+      import('puppeteer-core'),
+    ])
+    const chromium = chromiumModule.default
+    const puppeteerCore = puppeteerCoreModule.default
+    browser = await puppeteerCore.launch({
+      args: chromium.args,
+      executablePath: await chromium.executablePath(),
+      headless: true,
+    })
+  } else {
+    let puppeteer
+    try {
+      puppeteer = await import('puppeteer')
+    } catch {
+      console.error('❌ puppeteer not found. Install it: npm install -D puppeteer')
+      server.close()
+      process.exit(1)
+    }
+    browser = await puppeteer.default.launch({
+      headless: true,
+      args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    })
+  }
 
   let rendered = 0
   let failed = 0
