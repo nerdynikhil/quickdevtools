@@ -2,6 +2,7 @@ import { RouterProvider } from 'react-router-dom'
 import { ThemeProvider } from '@/context/ThemeContext'
 import { TooltipProvider } from '@/components/ui/tooltip'
 import { router } from '@/router'
+import { AnalyticsTracker } from '@/components/analytics/Analytics'
 import {
   SITE_URL,
   SITE_NAME,
@@ -37,6 +38,7 @@ export default function App() {
       <TooltipProvider>
         <AppHead />
         <RouterProvider router={router} />
+        <AnalyticsTracker />
       </TooltipProvider>
     </ThemeProvider>
   )
